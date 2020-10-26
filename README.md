@@ -1,8 +1,5 @@
 # robofriends
 React + Redux
 
-To run the project:
-
-1. Clone this repo
-2. Run `npm install`
-3. Run `npm start`
+A project to test Progressive Web App (PWA) on Github Pages.
+Used Lighthouse to monitor PWA score.
