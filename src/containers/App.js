@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setSearchField, requestRobots } from '../actions';
+<<<<<<< HEAD
 import Header from '../components/Header';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import ErrorBoundry from '../components/ErrorBoundry';
+=======
+
+import MainPage from '../components/MainPage';
+>>>>>>> 59ef1ee9d461fd6552348cb70115f04386bd8949
 
 import './App.css';
 
@@ -28,11 +33,8 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 class App extends Component {
-  componentDidMount() {
-    this.props.onRequestRobots();
-  }
-
   render() {
+<<<<<<< HEAD
     const { robots, searchField, onSearchChange, isPending } = this.props;
     const filteredRobots = robots.filter(robot => {
       return robot.name.toLowerCase().includes(searchField.toLowerCase());
@@ -53,6 +55,9 @@ class App extends Component {
             </div>
         );
     }
+=======
+    return <MainPage {...this.props}/>
+>>>>>>> 59ef1ee9d461fd6552348cb70115f04386bd8949
   }
 }
 
