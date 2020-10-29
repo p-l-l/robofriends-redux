@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`expect to render CardList component 1`] = `
+exports[`CardList component Renders correctly 1`] = `
 <div>
   <Card
     email="john@gmail.com"
