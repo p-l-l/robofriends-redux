@@ -6,8 +6,23 @@ import {
   REQUEST_ROBOTS_FAILED
  } from '../constants'
 
+ 
+export interface IRobot {
+  name: string;
+  id: number;
+  email: string;
+}
 
-export const setSearchField = (text) => ({ type: CHANGE_SEARCHFIELD, payload: text })
+export interface IAction {
+  type: string,
+  payload: any
+}
+
+export interface ISearchFieldAction extends IAction {
+  payload: string
+}
+
+export const setSearchField = (text:string):ISearchFieldAction => ({ type: CHANGE_SEARCHFIELD, payload: text })
 
 export const requestRobots = (apiLink = 'https://jsonplaceholder.typicode.com/users') => (dispatch) => {
   console.log(apiLink);

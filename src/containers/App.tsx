@@ -6,8 +6,23 @@ import MainPage from '../components/MainPage/MainPage';
 
 import './App.css';
 
+export interface IRobot {
+  name: string;
+  id: number;
+  email: string;
+}
+
+interface IAppProps {
+
+}
+
+interface IAppState {
+  robots: Array<IRobot>;
+  searchfield: string;
+}
+
 // parameter state comes from index.js provider store state(rootReducers)
-const mapStateToProps = (state) => {
+const mapStateToProps = (state:IAppState) => {
   return {
     searchField: state.searchRobots.searchField,
     robots: state.requestRobots.robots,
@@ -17,14 +32,14 @@ const mapStateToProps = (state) => {
 
 // dispatch the DOM changes to call an action. note mapStateToProps returns object, mapDispatchToProps returns function
 // the function returns an object then uses connect to change the data from reducers.
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch:Function) => {
   return {
-    onSearchChange: (event) => dispatch(setSearchField(event.target.value)), //Note : dispatch is related to thunks
+    onSearchChange: (event:any) => dispatch(setSearchField(event.target.value)), //Note : dispatch is related to thunks
     onRequestRobots: () => dispatch(requestRobots())
   }
 }
 
-class App extends Component {
+class App extends Component<IAppProps, IAppState> {
   render() {
     return <MainPage {...this.props}/>
   }

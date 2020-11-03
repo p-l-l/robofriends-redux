@@ -1,3 +1,4 @@
+import { Interface } from 'readline';
 import {
   CHANGE_SEARCHFIELD,
   REQUEST_ROBOTS_PENDING,
@@ -5,7 +6,11 @@ import {
   REQUEST_ROBOTS_FAILED
  } from '../constants';
 
-const initialStateSearch = {
+export interface ISearchFieldState{
+  searchField:string;
+}
+
+const initialStateSearch:ISearchFieldState = {
   searchField: ''
 }
 
